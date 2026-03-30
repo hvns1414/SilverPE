@@ -32,29 +32,16 @@ The primary goal is to demonstrate how a PE file can be loaded and executed enti
 - [x] **Import Resolution:** Manually resolves IAT using `LoadLibrary` and `GetProcAddress`.
 - [x] **Section Management:** Maps PE sections with appropriate memory
 
-## Demo (Running mimikatz)
-### x86
-<p align="center">
-    <img src="https://iss4cf0ng.github.io/images/article/2026-3-10-IronPE/1.png" width=800>
-</p>
-<p align="center">
-    <img src="https://iss4cf0ng.github.io/images/article/2026-3-10-IronPE/2.png" width=800>
-</p>
-
----
-
-### x64
-<p align="center">
-    <img src="https://iss4cf0ng.github.io/images/article/2026-3-10-IronPE/3.png" width=800>
-</p>
+##(Running mimikatz)Demo version
 
 <p align="center">
-    <img src="https://iss4cf0ng.github.io/images/article/2026-3-10-IronPE/4.png" width=800>
+    <img src="1.png" width=800>
 </p>
-
----
+<p align="center">
+    <img src="3.png" width=800>
+</p>
 
 ### Unmatched Loader and PE Architecture (Error)
 <p align="center">
-    <img src="https://iss4cf0ng.github.io/images/article/2026-3-10-IronPE/5.png" width=800>
+    <img src="2.png" width=800>
 </p>
