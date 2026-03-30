@@ -1,54 +1,45 @@
-//pe_structures.rs
-//PE format structures for x86 and x64
-//Author: iss4cf0ng/ISSAC
-//GitHub: https://github.com/iss4cf0ng/IronPE
-
+//GitHub: https://github.com/hvns1414/SilverPE
 #![allow(non_snake_case, dead_code)]
-
 use std::{fmt, u64};
-
-
-//DOS Header (COFF/PE Header)
 #[repr(C, packed)]
 #[derive(Clone, Copy, Default)]
 pub struct IMAGE_DOS_HEADER {
-    pub e_magic   : u16,         //Magic number ("MZ")
-    pub e_cblp    : u16,         //Bytes on last page of file
-    pub e_cp      : u16,         //Pages in file
-    pub e_crlc    : u16,         //Relocation
-    pub e_cparhdr : u16,         //Size of header in paragraphs
-    pub e_minalloc: u16,         //Minimum extra paragraphs needed
-    pub e_maxalloc: u16,         //Maximum extra paragraphs needed
-    pub e_ss      : u16,         //Initial (relative) SS value
-    pub e_sp      : u16,         //Initial SP value
-    pub e_csum    : u16,         //Checksum
-    pub e_ip      : u16,         //Initial IP value
-    pub e_cs      : u16,         //Initial (relative) CS value
-    pub e_lfarlc  : u16,         //File address of relocation table
-    pub e_ovno    : u16,         //Overlay number
-    pub e_res     : [u16; 4],    //Reserved words
-    pub e_oemid   : u16,         //OEM identifier
-    pub e_oeminfo : u16,         //OEM information
-    pub e_res2    : [u16; 10],   //Reserved words
-    pub e_lfanew  : u32,         //File address of new exe header
+    pub e_magic   : u16,         
+    pub e_cblp    : u16,         
+    pub e_cp      : u16,         
+    pub e_crlc    : u16,         
+    pub e_cparhdr : u16,         
+    pub e_minalloc: u16,        
+    pub e_maxalloc: u16,         
+    pub e_ss      : u16,         
+    pub e_sp      : u16,         
+    pub e_csum    : u16,         
+    pub e_ip      : u16,         
+    pub e_cs      : u16,         
+    pub e_lfarlc  : u16,         
+    pub e_ovno    : u16,         
+    pub e_res     : [u16; 4],    
+    pub e_oemid   : u16,         
+    pub e_oeminfo : u16,         
+    pub e_res2    : [u16; 10],   
+    pub e_lfanew  : u32,         
 }
 
-//File Header (COFF/PE Header)
 #[repr(C, packed)]
 #[derive(Clone, Copy, Default)]
 pub struct IMAGE_FILE_HEADER {
-    pub machine                : u16,   //Target machien type (CPU architecture), e.g., 0x014c = Intel 386, 0x8664 = x64
-    pub number_of_sections     : u16,   //Number of sections in the file
-    pub time_data_stamp        : u32,   //Time the file was created (UTC, seconds since 1970-01-01)
-    pub pointer_to_symbol_table: u32,   //File offset to the COFF symbol table (usually 0 in PE files)
-    pub number_of_symbols      : u32,   //Number of symbols in the COFF symbol table (usually 0 in PE files)
-    pub size_of_optional_header: u16,   //Size of the optional header that follows this structure
-    pub characteristics        : u16,   //File characteristics flags
+    pub machine                : u16,   
+    pub number_of_sections     : u16,   
+    pub time_data_stamp        : u32, 
+    pub pointer_to_symbol_table: u32,   
+    pub number_of_symbols      : u32,   
+    pub size_of_optional_header: u16,   
+    pub characteristics        : u16,   
 }
 
-pub const IMAGE_FILE_32BIT_MACHINE: u16 = 0x0100; //Flag indicating 32-bit machine
+pub const IMAGE_FILE_32BIT_MACHINE: u16 = 0x0100; 
 
-//Data Directory
+
 #[repr(C, packed)]
 #[derive(Clone, Copy, Default)]
 pub struct IMAGE_DATA_DIRECTORY {
@@ -56,7 +47,7 @@ pub struct IMAGE_DATA_DIRECTORY {
     pub size           : u32,   //Size of the table in bytes
 }
 
-//Optional Header (32-bit)
+
 #[repr(C, packed)]
 #[derive(Clone, Copy, Default)]
 pub struct IMAGE_OPTIONAL_HEADER32 {
@@ -99,20 +90,20 @@ pub struct IMAGE_OPTIONAL_HEADER32 {
     pub debug                     : IMAGE_DATA_DIRECTORY,
     pub architecture              : IMAGE_DATA_DIRECTORY,
     pub global_ptr                : IMAGE_DATA_DIRECTORY,
-    pub tls_table                 : IMAGE_DATA_DIRECTORY,   //Thread Local Storage (TLS)
+    pub tls_table                 : IMAGE_DATA_DIRECTORY,   /
     pub load_config_table         : IMAGE_DATA_DIRECTORY,
     pub bound_import              : IMAGE_DATA_DIRECTORY,
-    pub iat                       : IMAGE_DATA_DIRECTORY,   //Import Address Table (IAT)
+    pub iat                       : IMAGE_DATA_DIRECTORY,   
     pub delay_import_descriptor   : IMAGE_DATA_DIRECTORY,
     pub clr_runtime_header        : IMAGE_DATA_DIRECTORY,
     pub reserved                  : IMAGE_DATA_DIRECTORY,
 }
 
-//Optional Header (64-bit)
+
 #[repr(C, packed)]
 #[derive(Clone, Copy, Default)]
 pub struct IMAGE_OPTIONAL_HEADER64 {
-    pub magic                     : u16,                    //Magic number identifying PE32+ format (0x20b)
+    pub magic                     : u16,                    
     pub major_linker_version      : u8,
     pub minor_linker_version      : u8,
     pub size_of_code              : u32,
@@ -120,7 +111,7 @@ pub struct IMAGE_OPTIONAL_HEADER64 {
     pub size_of_uninitialized_data: u32,
     pub address_of_entry_point    : u32,
     pub base_of_code              : u32,
-    pub image_base                : u64,                    //64-bit image base
+    pub image_base                : u64,
     pub section_alignment         : u32,
     pub file_alignment            : u32,
     pub major_os_version          : u16,
@@ -135,10 +126,10 @@ pub struct IMAGE_OPTIONAL_HEADER64 {
     pub check_sum                 : u32,
     pub subsystem                 : u16,
     pub dll_characteristics       : u16,
-    pub size_of_stack_reserve     : u64,                    //64-bit stack reserve
-    pub size_of_stack_commit      : u64,                    //64-bit stack commit
-    pub size_of_heap_reserve      : u64,                    //64-bit heap reserve
-    pub size_of_heap_commit       : u64,                    //64-bit heap commit
+    pub size_of_stack_reserve     : u64,                    
+    pub size_of_stack_commit      : u64,                   
+    pub size_of_heap_reserve      : u64,                    
+    pub size_of_heap_commit       : u64,                    
     pub loader_flags              : u32,
     pub number_of_rva_and_sizes   : u32,
     pub export_table              : IMAGE_DATA_DIRECTORY,
