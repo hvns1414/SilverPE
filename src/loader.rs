@@ -1,7 +1,4 @@
-//loader.rs
-//PE loading logic for x86 and x64
-//Author: iss4cf0ng/ISSAC
-//GitHub: https://github.com/iss4cf0ng/IronPE
+//GitHub: https://github.com/hvns1414/SilverPE
 
 use std::ffi::CString;
 use windows::{
@@ -18,8 +15,6 @@ use windows::{
 #[allow(unused_imports)]
 use crate::logger::{log_error, log_info, log_ok};
 use crate::pe_structures::*;
-
-//x86 PE loader
 
 pub struct X86PeLoader {
     pub raw_bytes: Vec<u8>, //file bytes
@@ -85,10 +80,9 @@ pub fn load_x86(pe: &X86PeLoader) -> Result<(), String> {
         let base = image_base as *mut u8;
         let raw = pe.raw_bytes.as_ptr();
 
-        //Copy headers
         std::ptr::copy_nonoverlapping(raw, base, opt.size_of_headers as usize);
 
-        //Copy sections
+        
         for sec in &pe.sections {
             let dest = base.add(sec.virtual_address as usize);
             std::ptr::copy_nonoverlapping(raw.add(sec.pointer_to_raw_data as usize), dest, sec.size_of_raw_data as usize);
@@ -96,7 +90,7 @@ pub fn load_x86(pe: &X86PeLoader) -> Result<(), String> {
             log_info(&format!("Section {:>8} copied to {:#X}", sec.name_str(), dest as usize));
         }
 
-        //Relocation
+ 
         let delta = image_base as i64 - opt.image_base as i64;
         if delta != 0 {
             let reloc_dir = &opt.base_relocation_table;
@@ -134,7 +128,7 @@ pub fn load_x86(pe: &X86PeLoader) -> Result<(), String> {
             }
         }
 
-        //Import libraries
+        
         let import_dir = &opt.import_table;
         if import_dir.size == 0 {
             return Err("Import table size is zero".to_string());
@@ -170,12 +164,12 @@ pub fn load_x86(pe: &X86PeLoader) -> Result<(), String> {
                 }
 
                 let func_addr = if (thunk_data & 0x80000000) != 0 {
-                    //Import by ordinal
+                  
                     let oridinal = (thunk_data & 0xFFFF) as usize;
                     
                     GetProcAddress(h_dll, PCSTR(oridinal as *const u8))
                 } else {
-                    //Import by name
+           
                     let pName = base.add(thunk_data as usize + 2);
                     let func_name = read_ansi_string(pName);
                     let func_cstr = CString::new(func_name).map_err(|e| e.to_string())?;
@@ -194,7 +188,7 @@ pub fn load_x86(pe: &X86PeLoader) -> Result<(), String> {
             desc_ptr = (desc_ptr as *const u8).add(desc_size) as *const IMAGE_IMPORT_DESCRIPTOR;
         }
 
-        //Go to OEP
+    
         log_ok("Jump to OEP");
         let entry = base.add(opt.address_of_entry_point as usize);
         let hThread = CreateThread(
@@ -212,7 +206,6 @@ pub fn load_x86(pe: &X86PeLoader) -> Result<(), String> {
     }
 }
 
-//x64 PE loader
 
 pub struct X64PeLoader {
     pub raw_bytes: Vec<u8>,
