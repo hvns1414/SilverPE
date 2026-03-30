@@ -21,7 +21,7 @@ const BANNER: &str = r#"
       (SilverPE - Advanced Loader)
 "#;
 
-const DESCRIPTION: &str = "Author: iss4cf0ng/ISSAC\nGitHub: https://github.com/hvns1414/SilverPE";
+const DESCRIPTION: &str = "Author: Sh3d0w\nGitHub: https://github.com/hvns1414/SilverPE";
 
 const USAGE: &str = "Usage:
 \tSilverPE.exe --x86 <FilePath>
@@ -30,7 +30,6 @@ const USAGE: &str = "Usage:
 ";
 
 const FIGHTER: &str = r#"
-F14 TOMCAT - MISSION READY
                \ /                                          \   /
               --o--           `\\             //'      .____-/.\-____.
                                 \\           //             ~`-'~
