@@ -1,4 +1,5 @@
-# SilverPE - Minimal Windows PE manual loader. <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUhVPtQjTENuE66i3-XAZNSBxH0HuvzXE3dw&s">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUhVPtQjTENuE66i3-XAZNSBxH0HuvzXE3dw&s">
+# SilverPE - Minimal Windows PE manual loader.
 
 Rust PE Loader / Manual Mapping Implementation
 
