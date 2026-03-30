@@ -1,13 +1,16 @@
 use colored::Colorize;
 
 pub fn log_ok(msg: &str) {
-    println!("{} {}", "[+]".green(), msg);
+    // [+] Başarılı durumlar için Mor (Magenta)
+    println!("{} {}", "[+]".magenta().bold(), msg);
 }
 
 pub fn log_info(msg: &str) {
-    println!("{} {}", "[*]".cyan(), msg);
+    // [*] Bilgi mesajları için Mavi (Blue)
+    println!("{} {}", "[*]".blue().bold(), msg);
 }
 
 pub fn log_error(msg: &str) {
-    println!("{} {}", "[-]".red(), msg);
+    // [-] Hata mesajları için Kırmızı (Red)
+    println!("{} {}", "[-]".red().bold(), msg);
 }
