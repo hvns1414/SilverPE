@@ -1,5 +1,5 @@
 # SilverPE - Minimal Windows PE manual loader.
-
+<img src="" width=200>
 Rust PE Loader / Manual Mapping Implementation
 
 **SilverPE** is a minimal Windows PE manual loader written in Rust for both x86 and x64 PE files.
@@ -7,12 +7,6 @@ Rust PE Loader / Manual Mapping Implementation
 This project is a **Rust reimplementation** of my previous project, which implemented a manual PE loader in C#.
 
 The goal of IronPE is to explore how Windows loads Portable Executables internally and to demonstrate how this process can be implemented in Rust.
-
-<p align="center">
-  <img src="" width="200">
-  <br>
-  Waaaahhhhhhh!
-</p>
 
 <p align="center">If you find this project useful or informative, a ⭐ would be appreciated!</p>
 
@@ -26,9 +20,7 @@ It is designed to help understand:
 - Manual loading techniques
 - Reverse engineering concepts
 
-<p align="center">
-    <img src="" width=200>
-</p>
+
 
 ## Features
 
@@ -74,21 +66,21 @@ Requirements:
 
 Build the project:
 ```
-cd IronPE
+cd SilverPE
 build.bat
 ```
 
 ## Usage
 ```
-IronPE.exe --coffee
-IronPE.exe --x86 <x86_pe_file>
-IronPE.exe --x64 <x64_pe_file>
+SilverPE.exe --fighter
+SilverPE.exe --x86 <x86_pe_file>
+SilverPE.exe --x64 <x64_pe_file>
 ```
 
 Example:
 ```
-IronPE.exe --x86 Win32\mimikatz.exe
-IronPE.exe --x64 x64\mimikatz.exe
+SilverPE.exe --x86 Win32\mimikatz.exe
+SilverPE.exe --x64 x64\mimikatz.exe
 ```
 
 ## Demo (Running mimikatz)
