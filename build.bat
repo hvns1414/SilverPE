@@ -1,3 +1,9 @@
+cls
+echo ____  _ _                ____  _____ 
+echo/ ___|(_) |_   _____ _ __|  _ \| ____|
+echo\___ \| | \ \ / / _ \ '__| |_) |  _|  
+echo ___) | | |\ V /  __/ |  |  __/| |___ 
+echo|____/|_|_| \_/ \___|_|  |_|   |_____|
 @echo off
 echo [*] Building x64...
 cargo build --release --target x86_64-pc-windows-msvc
