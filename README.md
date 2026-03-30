@@ -35,12 +35,12 @@ The primary goal is to demonstrate how a PE file can be loaded and executed enti
 
 <h3>#Demo version(Running mimikatz)</h3>
 <p align="center">
-    <img src="1.png" width=800>
+    <img src="1.PNG" width=800>
 </p>
 <p align="center">
-    <img src="3.png" width=800>
+    <img src="3.PNG" width=800>
 </p>
 <h3>Errors</h3>
 <p align="center">
-    <img src="2.png" width=800>
+    <img src="2.PNG" width=800>
 </p>
