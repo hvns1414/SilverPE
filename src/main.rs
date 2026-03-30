@@ -1,6 +1,3 @@
-//main.rs
-//Author: iss4cf0ng/ISSAC
-//GitHub: https://github.com/iss4cf0ng/IronPE
 
 #![allow(non_snake_case)]
 
@@ -24,7 +21,7 @@ const BANNER: &str = r#"
 |____/|_|_| \_/ \___|_|  |_|   |_____|
 "#;
 
-const DESCRIPTION: &str = "Author: iss4cf0ng/ISSAC\nGitHub: https://github.com/iss4cf0ng/IronPE";
+const DESCRIPTION: &str = "Author: iss4cf0ng/ISSAC\nGitHub: https://github.com/hvns1414/SilverPE";
 
 const USAGE: &str = "Example:
 \tIronPE.exe --x86 <FilePath>
@@ -73,7 +70,7 @@ fn main() {
 
     let args: Vec<String> = env::args().collect();
 
-    //Validate argument counts
+
     let valid = args.len() >= 3 || (args.len() == 2 && args[1] == "--fighter");
     if !valid {
         println!("{}", USAGE);
