@@ -17,14 +17,11 @@ use crate::loader::load_x64;
 use crate::loader::load_x86;
 
 const BANNER: &str = r#"
-  _        (`-')            <-. (`-')_  _  (`-') (`-')  _ 
- (_)    <-.(OO )      .->      \( OO) ) \-.(OO ) ( OO).-/ 
- ,-(`-'),------,)(`-')----. ,--./ ,--/  _.'    \(,------. 
- | ( OO)|   /`. '( OO).-.  '|   \ |  | (_...--'' |  .---' 
- |  |  )|  |_.' |( _) | |  ||  . '|  |)|  |_.' |(|  '--.  
-(|  |_/ |  .   .' \|  |)|  ||  |\    | |  .___.' |  .--'  
- |  |'->|  |\  \   '  '-'  '|  | \   | |  |      |  `---. 
- `--'   `--' '--'   `-----' `--'  `--' `--'      `------' 
+ ____  _ _                ____  _____ 
+/ ___|(_) |_   _____ _ __|  _ \| ____|
+\___ \| | \ \ / / _ \ '__| |_) |  _|  
+ ___) | | |\ V /  __/ |  |  __/| |___ 
+|____/|_|_| \_/ \___|_|  |_|   |_____|
 "#;
 
 const DESCRIPTION: &str = "Author: iss4cf0ng/ISSAC\nGitHub: https://github.com/iss4cf0ng/IronPE";
@@ -32,22 +29,22 @@ const DESCRIPTION: &str = "Author: iss4cf0ng/ISSAC\nGitHub: https://github.com/i
 const USAGE: &str = "Example:
 \tIronPE.exe --x86 <FilePath>
 \tIronPE.exe --x64 <FilePath>
-\tIronPE.exe --coffee
+\tIronPE.exe --fighter
 ";
 
 const COFFEE: &str = r#"
-    (  )   (   )  )
-     ) (   )  (  (
-     ( )  (    ) )
-     _____________
-    <_____________> ___
-    |             |/ _ \
-    |               | | |
-    |               |_| |
- ___|             |\___/
-/    \___________/    \
-\_____________________/
-"#;
+F14 
+               \ /                                          \   /
+              --o--           `\\             //'      .____-/.\-____.
+                                \\           //             ~`-'~
+                                 \\. __-__ .//
+                       ___/-_.-.__`/~     ~\'__.-._-\___                    
+.|.       ___________.'__/__ ~-[ \.\'-----'/./ ]-~ __\__`.___________       .|.
+~o~~~~~~~--------______-~~~~~-_/_/ |   .   | \_\_-~~~~~-______--------~~~~~~~o~
+' `               + + +  (X)(X)  ~--\__ __/--~  (X)(X)  + + +               ' `
+                             (X) `/.\' ~ `/.\' (X)  
+                                 "\_/"   "\_/"
+  "#;
 
 fn main() {
     #[cfg(windows)]
@@ -72,12 +69,12 @@ fn main() {
     } else {
         "x86"
     };
-    log_info(&format!("The current process architecture is: {}", arch));
+    log_info(&format!("[*]The current process architecture is: {}", arch));
 
     let args: Vec<String> = env::args().collect();
 
     //Validate argument counts
-    let valid = args.len() >= 3 || (args.len() == 2 && args[1] == "--coffee");
+    let valid = args.len() >= 3 || (args.len() == 2 && args[1] == "--fighter");
     if !valid {
         println!("{}", USAGE);
         return;
@@ -90,7 +87,7 @@ fn main() {
 
 fn run(args: &[String]) -> Result<(), String> {
     match args[1].as_str() {
-        "--coffee" => {
+        "--fighter" => {
             println!("{}", COFFEE);
             Ok(())
         }
