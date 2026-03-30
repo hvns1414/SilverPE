@@ -1,5 +1,5 @@
 # SilverPE - Minimal Windows PE manual loader.
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUhVPtQjTENuE66i3-XAZNSBxH0HuvzXE3dw&s" width=200>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUhVPtQjTENuE66i3-XAZNSBxH0HuvzXE3dw&s">
 Rust PE Loader / Manual Mapping Implementation
 
 **SilverPE** is a minimal Windows PE manual loader written in Rust for both x86 and x64 PE files.
