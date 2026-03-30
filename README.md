@@ -1,88 +1,36 @@
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUhVPtQjTENuE66i3-XAZNSBxH0HuvzXE3dw&s">
-# SilverPE - Minimal Windows PE manual loader.
+<p align="center">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUhVPtQjTENuE66i3-XAZNSBxH0HuvzXE3dw&s" width="150" alt="SilverPE Logo">
+</p>
 
-Rust PE Loader / Manual Mapping Implementation
+<h1 align="center">SilverPE</h1>
 
-**SilverPE** is a minimal Windows PE manual loader written in Rust for both x86 and x64 PE files.
+<p align="center">
+  <strong>Minimal Windows PE Manual Loader implemented in Rust</strong>
+</p>
 
-This project is a **Rust reimplementation** of my previous project, which implemented a manual PE loader in C#.
+<p align="center">
+  <img src="https://img.shields.io/badge/Language-Rust-orange.svg" alt="Rust">
+  <img src="https://img.shields.io/badge/Platform-Windows-blue.svg" alt="Windows">
+  <img src="https://img.shields.io/badge/Arch-x86%20%2F%20x64-red.svg" alt="Architecture">
+  <img src="https://img.shields.io/github/stars/hvns1414/SilverPE?style=flat-square" alt="Stars">
+</p>
 
-The goal of IronPE is to explore how Windows loads Portable Executables internally and to demonstrate how this process can be implemented in Rust.
+---
 
-<p align="center">If you find this project useful or informative, a ⭐ would be appreciated!</p>
+##  Overview
 
-## Disclaimer
+**SilverPE** is a high-performance, minimal Windows Portable Executable (PE) manual loader. This project explores the inner workings of the Windows OS by reimplementing the manual mapping process—originally developed in C#—using the memory safety and low-level power of **Rust**.
 
-This project is intended for **educational and research purposes only**.
+The primary goal is to demonstrate how a PE file can be loaded and executed entirely from memory without relying on the standard Windows loader (`LdrLoadDll`).
 
-It is designed to help understand:
+##  Features
 
-- Windows PE internals
-- Manual loading techniques
-- Reverse engineering concepts
-
-
-
-## Features
-
-- Manual PE loading
-- Section mapping
-- Base relocations
-- Import resolution
-- Execute PE from memory
-- x86 and x64 PE support
-
-## Background
-
-This project was inspired by my previous implementation:
-
-In that project, I implemented a PE loader using .NET and WinAPI.  
-IronPE rewrites the same concept in **Rust**, which provides better memory safety while still allowing low-level Windows API access.
-
-The purpose of this project is **educational**, to better understand:
-
-- PE file structure
-- Windows loader behavior
-- Manual PE mapping techniques
-
-## How It Works
-IronPE performs the following steps to execute a PE file from memory:
-
-1. Read PE file into memory
-2. Parse PE headers
-3. Allocate memory using `VirtualAlloc`
-4. Copy PE headers and sections
-5. Apply **base relocations**
-6. Resolve **imports** using `LoadLibrary` and `GetProcAddress`
-7. Transfer execution to the **Original Entry Point (OEP)**
-
-This process mimics the behavior of the Windows PE loader.
-
-An x64 PE cannot be loaded by an x86 loader, and vice versa.
-
-## Build
-Requirements:
-- Rust (`cargo`, `rustc`)
-- Windows
-
-Build the project:
-```
-cd SilverPE
-build.bat
-```
-
-## Usage
-```
-SilverPE.exe --fighter
-SilverPE.exe --x86 <x86_pe_file>
-SilverPE.exe --x64 <x64_pe_file>
-```
-
-Example:
-```
-SilverPE.exe --x86 Win32\mimikatz.exe
-SilverPE.exe --x64 x64\mimikatz.exe
-```
+- [x] **Manual Mapping:** Complete implementation of PE loading logic.
+- [x] **Architecture Support:** Seamlessly handles both `x86` and `x64` PE files.
+- [x] **Memory Execution:** Executes payloads directly from memory.
+- [x] **Base Relocations:** Corrects image base offsets dynamically.
+- [x] **Import Resolution:** Manually resolves IAT using `LoadLibrary` and `GetProcAddress`.
+- [x] **Section Management:** Maps PE sections with appropriate memory
 
 ## Demo (Running mimikatz)
 ### x86
