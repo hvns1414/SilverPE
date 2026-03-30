@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUhVPtQjTENuE66i3-XAZNSBxH0HuvzXE3dw&s" width="150" alt="SilverPE Logo">
+  <img src="logo.png" width="150" alt="SilverPE Logo">
 </p>
 
 <h1 align="center">SilverPE</h1>
