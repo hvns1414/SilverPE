@@ -1,9 +1,9 @@
 [package]
-name = "IronPE"
+name = "SilverPE"
 version = "1.0.0"
 edition = "2021"
 authors = ["ISSAC"]
-description = "A Rust Loader for x86 and x64 binaries"
+description = "A Rust Loader for x86 and x64 binaries - Advanced Edition"
 
 [dependencies]
 colored = "2"
@@ -19,5 +19,5 @@ windows = { version = "0.56", features = [
 ] }
 
 [[bin]]
-name = "IronPE"
+name = "SilverPE"
 path = "src/main.rs"
