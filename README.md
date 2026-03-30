@@ -1,20 +1,15 @@
-# IronPE - Minimal Windows PE manual loader written in Rust.
+# SilverPE - Minimal Windows PE manual loader.
 
 Rust PE Loader / Manual Mapping Implementation
 
-![status](https://img.shields.io/badge/status-production-red)
-![language](https://img.shields.io/badge/language-Rust-orange)
-![license](https://img.shields.io/badge/license-MIT-green)
-![Release](https://img.shields.io/github/v/release/iss4cf0ng/IronPE)
+**SilverPE** is a minimal Windows PE manual loader written in Rust for both x86 and x64 PE files.
 
-**IronPE** is a minimal Windows PE manual loader written in Rust for both x86 and x64 PE files.
-
-This project is a **Rust reimplementation** of my previous project **[dotNetPELoader](https://github.com/iss4cf0ng/dotNetPELoader)**, which implemented a manual PE loader in C#.
+This project is a **Rust reimplementation** of my previous project, which implemented a manual PE loader in C#.
 
 The goal of IronPE is to explore how Windows loads Portable Executables internally and to demonstrate how this process can be implemented in Rust.
 
 <p align="center">
-  <img src="https://iss4cf0ng.github.io/images/meme/natsu_cake.jpg" width="200">
+  <img src="" width="200">
   <br>
   Waaaahhhhhhh!
 </p>
@@ -32,7 +27,7 @@ It is designed to help understand:
 - Reverse engineering concepts
 
 <p align="center">
-    <img src="https://iss4cf0ng.github.io/images/meme/mika_rollcake_hit.png" width=200>
+    <img src="" width=200>
 </p>
 
 ## Features
@@ -47,8 +42,6 @@ It is designed to help understand:
 ## Background
 
 This project was inspired by my previous implementation:
-
-- [dotNetPELoader](https://github.com/iss4cf0ng/dotNetPELoader) (C#)
 
 In that project, I implemented a PE loader using .NET and WinAPI.  
 IronPE rewrites the same concept in **Rust**, which provides better memory safety while still allowing low-level Windows API access.
