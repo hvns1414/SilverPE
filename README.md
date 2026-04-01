@@ -13,6 +13,7 @@
   <img src="https://img.shields.io/badge/Platform-Windows-blue.svg" alt="Windows">
   <img src="https://img.shields.io/badge/Arch-x86%20%2F%20x64-red.svg" alt="Architecture">
   <img src="https://img.shields.io/github/stars/hvns1414/SilverPE?style=flat-square" alt="Stars">
+  ![license](https://img.shields.io/badge/license-MIT-green)
 </p>
 
 ---
