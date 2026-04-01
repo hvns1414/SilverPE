@@ -11,7 +11,7 @@
   <img src="https://img.shields.io/github/stars/hvns1414/SilverPE?style=flat-square" alt="Stars">
   <img src="https://img.shields.io/badge/license-MIT-green">
 </p>
-![Banner]("logo.png")
+![Static Badge](logo.png)
 ---
 
 ##  Overview
