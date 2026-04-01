@@ -1,5 +1,5 @@
 <h1 align="center">SilverPE</h1>
-
+![Static Badge](logo.png)
 <p align="center">
   <strong>Minimal Windows PE Manual Loader implemented in Rust</strong>
 </p>
@@ -11,7 +11,7 @@
   <img src="https://img.shields.io/github/stars/hvns1414/SilverPE?style=flat-square" alt="Stars">
   <img src="https://img.shields.io/badge/license-MIT-green">
 </p>
-![Static Badge](logo.png)
+
 ---
 
 ##  Overview
