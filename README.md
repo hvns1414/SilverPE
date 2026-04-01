@@ -1,7 +1,9 @@
 <h1 align="center">SilverPE</h1>
-![Static Badge](logo.png)
+<a href="https://github.com/hvns1414/SilverPE">
+<img src="logo.png" alt="Proje Logosu" width="200">
+</a>
 <p align="center">
-  <strong>Minimal Windows PE Manual Loader implemented in Rust</strong>
+<strong>Minimal Windows PE Manual Loader implemented in Rust</strong>
 </p>
 
 <p align="center">
