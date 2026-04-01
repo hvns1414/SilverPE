@@ -11,11 +11,7 @@
   <img src="https://img.shields.io/github/stars/hvns1414/SilverPE?style=flat-square" alt="Stars">
   <img src="https://img.shields.io/badge/license-MIT-green">
 </p>
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="dark-background-logo.png">
-  <source media="(prefers-color-scheme: light)" srcset="light-background-logo.png">
-  <img alt="Proje Logosu" src="default-logo.png">
-</picture>
+![Banner]("logo.png")
 ---
 
 ##  Overview
