@@ -28,7 +28,27 @@ The primary goal is to demonstrate how a PE file can be loaded and executed enti
 - [x] **Import Resolution:** Manually resolves IAT using `LoadLibrary` and `GetProcAddress`.
 - [x] **Section Management:** Maps PE sections with appropriate memory
 
-
+## Installation & Usage
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/hvns1414/SilverPE.git
+   ```
+2. Install dependencies:
+   ```
+   .\buils.bat
+   ```
+3. Run 1.:
+   ```
+   cd mnt
+   ```
+4. Run 2.(x64):
+   ```
+   .\SilverPE_x64.exe --x64 (your PE loading code)  
+   ```
+5. Run 2.(x86):
+   ```
+   .\SilverPE_x64.exe --x64 (your PE loading code)
+   ```
 <h3>#Demo version(Running mimikatz)</h3>
 <p align="center">
     <img src="1.PNG" width=800>
