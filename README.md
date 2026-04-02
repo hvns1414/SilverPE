@@ -1,4 +1,11 @@
-<h1 align="center">SilverPE</h1>
+<h1 align="center">
+  _________.__  .__                  _____________________
+ /   _____/|  | |__|__  __ __________\______   \_   _____/
+ \_____  \ |  | |  \  \/ // __ \_  __ \     ___/|    __)_ 
+ /        \|  |_|  |\   /\  ___/|  | \/    |    |        \
+/_______  /|____/__| \_/  \___  >__|  |____|   /_______  /
+        \/                    \/                       \/ 
+</h1>
 <p align="center">
 <strong>Minimal Windows PE Manual Loader implemented in Rust</strong>
 </p>
