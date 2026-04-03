@@ -49,7 +49,7 @@ The primary goal is to demonstrate how a PE file can be loaded and executed enti
    ```
 5. Run 2.(x86):
    ```
-   .\SilverPE_x64.exe --x64 (your PE loading code)
+   .\SilverPE_x64.exe --x86 (your PE loading code)
    ```
 <h3>#Demo version(Running mimikatz)</h3>
 <p align="center">
